@@ -1,3 +1,2 @@
-import utility
-
+import utility 
 print(utility)
