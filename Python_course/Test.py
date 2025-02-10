@@ -1,9 +1,11 @@
-from random import shuffle
-import sys
+from moviepy.editor import VideoFileClip
 
-my_list = [1, 2, 3, 4, 5]
-shuffle(my_list)
+def convert_video(input_path, output_path):
+    clip = VideoFileClip(input_path)
+    clip.write_videofile(output_path, codec='libx264', audio_codec='aac')
+    print(f'Conversión completada: {output_path}')
 
-print(my_list)
-
-print("Argumentos recibidos:", sys.argv)
+# Uso
+test_input = 'video_original.avi'  # Reemplázalo con tu video
+output_format = 'mp4'
+convert_video(test_input, f'video_convertido.{output_format}')
